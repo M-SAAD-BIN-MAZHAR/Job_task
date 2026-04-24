@@ -7,8 +7,8 @@ import { Type } from 'class-transformer';
  */
 export class HcmConfig {
   @IsString()
-  @IsNotEmpty({ message: 'HCM_BASE_URL is required and must not be empty' })
-  HCM_BASE_URL: string;
+  @IsNotEmpty({ message: 'HCM_API_URL is required and must not be empty' })
+  HCM_API_URL: string;
 
   @IsString()
   @IsNotEmpty({ message: 'HCM_API_KEY is required and must not be empty' })

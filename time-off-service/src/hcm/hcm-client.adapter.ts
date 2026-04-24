@@ -20,7 +20,7 @@ export class HcmClientAdapter implements IHCMClient {
     private readonly configService: ConfigService,
     private readonly metricsService: MetricsService,
   ) {
-    this.baseUrl = configService.get<string>('HCM_BASE_URL', 'http://localhost:3001');
+    this.baseUrl = configService.get<string>('HCM_API_URL', 'http://localhost:3001');
     this.apiKey = configService.get<string>('HCM_API_KEY', '');
     this.timeoutMs = configService.get<number>('HCM_TIMEOUT_MS', 5000);
   }
