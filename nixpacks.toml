@@ -2,7 +2,7 @@
 nixPkgs = ["nodejs-18_x"]
 
 [phases.install]
-cmds = ["cd time-off-service && npm ci"]
+cmds = ["cd time-off-service && npm install"]
 
 [phases.build]
 cmds = ["cd time-off-service && npm run build"]
