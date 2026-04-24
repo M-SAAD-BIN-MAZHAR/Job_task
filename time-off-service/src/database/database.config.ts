@@ -9,7 +9,9 @@ export const getDatabaseConfig = (configService: ConfigService): TypeOrmModuleOp
     type: 'sqlite',
     database: configService.get<string>('DATABASE_PATH', './data/timeoff.db'),
     entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-    synchronize: !isProduction,
+    // TEMPORARY: Enable synchronize in production for initial deployment
+    // TODO: Create and use migrations for production deployments
+    synchronize: true, // Changed from: !isProduction
     logging: isDevelopment,
     migrations: [__dirname + '/../migrations/*{.ts,.js}'],
     migrationsRun: false,
