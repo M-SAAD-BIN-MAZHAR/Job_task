@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
@@ -16,7 +17,7 @@ async function bootstrap() {
   // Configure body parser with raw body for webhook signature validation
   app.use(
     bodyParser.json({
-      verify: (req: any, res, buf) => {
+      verify: (req: any, _res: any, buf: Buffer) => {
         // Store raw body for webhook signature validation
         req.rawBody = buf;
       },
