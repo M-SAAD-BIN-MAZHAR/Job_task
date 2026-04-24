@@ -1,6 +1,5 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "cd time-off-service && npm install && npm run build"
 
 [deploy]
 startCommand = "cd time-off-service && npm run start:prod"
