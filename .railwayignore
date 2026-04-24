@@ -1,0 +1,13 @@
+# Ignore files that don't need to be deployed
+node_modules/
+*.log
+.env
+.env.local
+coverage/
+.vscode/
+.idea/
+*.db
+*.db-journal
+data/
+tmp/
+temp/

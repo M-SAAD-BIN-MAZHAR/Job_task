@@ -45,9 +45,10 @@ async function bootstrap() {
   app.enableCors();
 
   const port = configService.get<number>('PORT', 3000);
-  await app.listen(port);
+  const host = '0.0.0.0'; // Listen on all interfaces for Railway/Docker
+  await app.listen(port, host);
 
-  logger.log(`Application is running on: http://localhost:${port}/api/v1`);
+  logger.log(`Application is running on: http://${host}:${port}/api/v1`);
   logger.log(`Environment: ${configService.get<string>('NODE_ENV', 'development')}`);
 }
 

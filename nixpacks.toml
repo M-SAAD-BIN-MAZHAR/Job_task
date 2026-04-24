@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs-18_x"]
+
+[phases.install]
+cmds = ["cd time-off-service && npm ci"]
+
+[phases.build]
+cmds = ["cd time-off-service && npm run build"]
+
+[start]
+cmd = "cd time-off-service && npm run start:prod"
